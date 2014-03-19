@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<base href="../">
+<head>
+	<title>Gravity Mouse</title>
+	<script src="jquery-1.10.2.min.js"> </script>
+	<script src="Gravity Mouse/gravity.js"> </script>
+	<link rel="stylesheet" href="Adrian.css">
+</head>
+
+<body>
+
+<canvas id="background" width="100%" height="100%">
+Your browser does not support the canvas element.
+</canvas>
+<script type="text/javascript" src="polytope.js" class="icosahedron"></script>
+
+<div class="header">
+	<h1> <a> Gravity Mouse Demo </a> </h1>
+</div>
+<div class="menu">
+	<script>
+		$(document).ready(function() {
+			$(".menu").load("menu.html div");
+		});
+	</script>
+</div>
+
+<div class="main">
+<div class="box">
+	<p> The goal of this project is to make clicking on links (and other clickable html elements) easier.
+	This is done by guiding the mouse pointer closer to links than it would normally go.
+	However, JavaScript cannot actually move the mouse pointer.
+	To get around this the real pointer is hidden and a fake one is put up.
+	</p>
+	
+	<p>Hit crtl-q to toggle gravity on and off.
+	I am currently working on a chrome extension for this, which will be available when it is more stable
+	</p>
+</div>
+</div>
+	
+</body></html>

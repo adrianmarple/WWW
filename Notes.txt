@@ -1,0 +1,16 @@
+General
+	-Create nice interactive scrollbar for thumbnails
+		-Increase size as image approaches middle
+		-top image overlaps others as two images pass eachother, they touch at the edge
+	-Finish Project page.
+
+About Me Page
+	-Artists/Composers that have influenced me
+		-Nobuo Uematsu, John Adams, Philip Glass, Dmitri Shostakovich, Opeth, Blotted Science, Animals as Leaders, Between the Buried and Me, Dream Theater
+
+Programming Projects
+	-Create online interactive selection for (tilealbe) genetic images
+
+Art Projects
+	-Update chainmail page with new jewelry.
+	-Add computer generated art page?

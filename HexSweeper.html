@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head><title>HexSweeper</title></head>
+<body>
+
+<link rel="stylesheet" href="Adrian.css">
+<link rel="icon" type="image/gif" href="cube.gif">
+
+<canvas id="canvas" width="100%" height="100%">
+Your browser does not support the canvas element.
+</canvas>
+
+<div id="instructions" style="display:none;color:#60F770">
+	<p style="margin-bottom:85px" />
+	<h3 style="margin-left:50px;margin-bottom:40px;">Instructions</h3>
+	<p>Left click to clear a space.  Right click to toggle a marker on an uncleared space.  Drag to move the entire map.
+	Colored numbers indicate the <i>total</i> number of adjacent mines (if this agrees with the number of adjacent markers, left click to clear all adjacent unmarked spaces).
+	White numbers indicate the <i>remaining</i> number of mines a distance of two away.
+	Either click the HexSweeper logo or press space to restart the game.</p>
+</div>
+
+<script type="text/javascript" src="HexSweeper/HexSweeper.js"></script>
+
+</body></html>

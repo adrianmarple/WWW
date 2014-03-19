@@ -1,0 +1,109 @@
+body {
+	background-color:black;
+	font-family:"Adobe Garamond", serif;
+	font-variant:small-caps;
+	letter-spacing:1px;
+	color:white;
+}
+canvas {
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:-1;
+}
+h1 {
+	font-size:36pt;
+	letter-spacing:5px;
+	word-spacing:20px;
+	margin-left:3%;
+}
+h2 {
+	font-size:24pt;
+	margin-left:3%;
+}
+a {
+	color:white;
+}
+.menu {
+	width:20%;
+	margin-top:20px;
+	float:left;
+}
+/* no longer using
+ul ul.tree {
+	display: none;
+}
+ul li:hover > ul {
+	display: block;
+}
+ul, li {
+	margin-left: 0;
+	padding-left: 0;
+}
+ul ul li {
+	margin-left:15px;
+	padding-left:0;
+}*/
+dt {
+	margin-top:10px;
+	font-size:16pt;
+}
+dd {
+	font-size:14pt;
+}
+
+
+.main {
+	width:80%;
+	float:right;
+}
+.box {
+	width:95%;
+	background-color:rgba(120,120,120,.8);
+	float:left;
+	border:3px solid #AAAAAA;
+	margin: 10px;
+	font-family:"Times New Roman", Times, serif;
+	text-align: left;
+}
+.box p {
+	font-variant:normal;
+	letter-spacing:normal;
+	margin-left:20px;
+	margin-right:10px;
+}
+.box h2 {
+	margin-left:20px;
+	letter-spacing:2px;
+	word-spacing:8px;
+}
+.box h3 {
+	margin-left:20px;
+}
+.box table {
+	margin: 10px;
+}
+.box table tr td {
+	margin-right: 10px;
+}
+img.right {
+	float:right;
+	margin-left:10px;
+}
+img.left {
+	float:left;
+	margin-right:20px;
+}
+audio {
+	float:right;
+}
+
+.chainmailnav a {
+	margin-left:3px;
+	margin-right:3px;
+}
+
+.genetic {
+	z-index:0;
+	position:static;
+}
