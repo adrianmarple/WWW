@@ -72,6 +72,10 @@ dd {
 	margin-left:20px;
 	margin-right:10px;
 }
+.box a {
+	font-variant:normal;
+	letter-spacing:normal;
+}
 .box h2 {
 	margin-left:20px;
 	letter-spacing:2px;
