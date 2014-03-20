@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>thumbscroll</title>
+	<script src="jquery-1.10.2.min.js"> </script>
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			jax: ["input/TeX", "input/MathML", "output/SVG", "output/HTML-CSS"],
+			extensions: ["tex2jax.js", "mml2jax.js","MathMenu.js","MathZoom.js"],
+			TeX: {
+				extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+			},
+			styles: {
+				".MathJax_SVG svg > g, .MathJax_SVG_Display svg > g": {
+					fill: "#FFF",
+					stroke: "#FFF"
+				}
+			},
+			SVG: {
+				font: "Neo-Euler",
+				blacker: 30
+			},
+			messageStyle: "none"
+		});
+	</script>
+	<script type="text/javascript"
+		src="http://cdn.mathjax.org/mathjax/latest/MathJax.js">
+	</script>
+	<script src="thumbscroll.js"> </script>
+	<link rel="stylesheet" href="Adrian.css">
+</head>
+
+<body>
+
+<canvas id="background" width="100%" height="100%">
+Your browser does not support the canvas element.
+</canvas>
+<script type="text/javascript" src="polytope.js" class="icosahedron"></script>
+
+<div class="header">
+	<h1> <a> thumbscroll </a> </h1>
+</div>
+<div class="menu">
+	<script>
+		$(document).ready(function() {
+			$(".menu").load("menu.html div");
+		});
+	</script>
+</div>
+
+<div class="main">
+<div class="box">
+	<h2> Click and Drag </h2>
+	<div class="thumbscroll">
+		<div class="thumb">
+			<img src="Images/Tetrahedron.png">
+			<p> Note that the description automatically changes as thumbs slide in and out of focus. </p>
+		</div>
+		<div class="thumb">
+			<img src="Images/Hexahedron.png">
+			<p> If a description contains a link, clicking on that thumb follows the link.
+				<a href="http://en.wikipedia.org/wiki/Platonic_solid"> Try It </a>
+			</p>
+		</div>
+		<div class="thumb">
+			<img src="Images/Octahedron.png">
+			<p> Thumbs can overlap, but they will never appear to pass through one another. </p>
+		</div>
+		<div class="thumb">
+			<img src="Images/Dodecahedron.png">
+			<p> This is my favorite Platonic solid. </p>
+		</div>
+		<div class="thumb">
+			<img src="Images/Icosahedron.png">
+			<p> Images taken from wikipedia (which you would know if you clicked on the cube). </p>
+		</div>
+	</div>
+</div>
+<div class="box">
+	<p> If you've visited the <a href="project.html">Project</a> or <a href="Chainmail">Chainmail Art</a> pages you may have noticed this element.
+	The idea is to have an aesthetically pleasing infinitely scrolling list of thumbnails fit into a finite space.
+	In order to actually insert a thumbscroll element into a webpage one does the following: </p>
+	<ul>
+		<li> Add a <code>div</code> element with class <code>thumbscroll</code> </li>
+		<li> For each thumbnail you want add another <code>div</code> with class <code>thumb</code> </li>
+		<li> Each thumbnail should have an <code>img</code> element and a paragraph (<code>p</code> tag) as a description. </li>
+	</ul>
+	<p> For example, here is the code for the thumbscroll above.</p>
+	<div class="box" style="float:right; margin-right:20pt"> <code>
+	&lt;div class="thumbscroll"&gt; <br>
+	&nbsp;&nbsp;&lt;div class="thumb"&gt; <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="Images/Tetrahedron.png"&gt; <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt; Note that the description automatically changes as thumbs slide in and out of focus. &lt;/p&gt; <br>
+	&nbsp;&nbsp;&lt;/div&gt; <br>
+	&nbsp;&nbsp;&lt;div class="thumb"&gt; <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="Images/Hexahedron.png"&gt; <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt; If a description contains a link, clicking on that thumb follows the link. <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="http://en.wikipedia.org/wiki/Platonic_solid"&gt; Try It &lt;/a&gt; <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&lt;/p&gt; <br>
+	&nbsp;&nbsp;&lt;/div&gt; <br>
+	&nbsp;&nbsp;&lt;div class="thumb"&gt; <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="Images/Octahedron.png"&gt; <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt; Thumbs can overlap, but they will never appear to pass through one another. &lt;/p&gt; <br>
+	&nbsp;&nbsp;&lt;/div&gt; <br>
+	&nbsp;&nbsp;&lt;div class="thumb"&gt; <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="Images/Dodecahedron.png"&gt; <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt; This is my favorite Platonic solid. &lt;/p&gt; <br>
+	&nbsp;&nbsp;&lt;/div&gt; <br>
+	&nbsp;&nbsp;&lt;div class="thumb"&gt; <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="Images/Icosahedron.png"&gt; <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt; Images taken from wikipedia (which you would know if you clicked on the cube). &lt;/p&gt; <br>
+	&nbsp;&nbsp;&lt;/div&gt; <br>
+	&lt;/div&gt; <br>
+	</code></div>
+	
+	<p>The math behind a thumbscroll is governed by a relatively small set of equations.
+	Let the scroll area be given by a rectangle of width \(w\) and height \(h\), the offset of a thumb image be given by real number \(x\), and its midpoint be placed at \(f(x)\) and its width \(g(x)\).
+	Then the relevent equations are:
+		$$r = h/w$$
+		$$f(x) = \frac{w}{1 + e^{ax}}$$
+		$$g(x) = h e^{-bx^2} $$
+		$$g(1/2) = 2f(1/2) - w $$
+	Since \(w\) is generated when the page is rendered, this leave two degrees of freedom, \(b\) and \(r\).
+	This first equation is little more than a convention,
+	the second states that \(f(x)\) is a Logistic Equation,
+	the third states that \(g(x)\) is a Gaussian,
+	and the final equation means that it is unambiguous to determine which image is on top.
+	In fact, the last equation states that two images that are equally close to the top are touching.
+	</p>
+</div>
+</div>
+	
+</body></html>

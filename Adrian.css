@@ -1,6 +1,6 @@
 body {
 	background-color:black;
-	font-family:"Adobe Garamond", serif;
+	font-family:"Adobe Garamond", Garamond, serif;
 	font-variant:small-caps;
 	letter-spacing:1px;
 	color:white;
@@ -24,26 +24,6 @@ h2 {
 a {
 	color:white;
 }
-.menu {
-	width:20%;
-	margin-top:20px;
-	float:left;
-}
-/* no longer using
-ul ul.tree {
-	display: none;
-}
-ul li:hover > ul {
-	display: block;
-}
-ul, li {
-	margin-left: 0;
-	padding-left: 0;
-}
-ul ul li {
-	margin-left:15px;
-	padding-left:0;
-}*/
 dt {
 	margin-top:10px;
 	font-size:16pt;
@@ -57,27 +37,31 @@ dd {
 	width:80%;
 	float:right;
 }
+.menu {
+	width:18%;
+	margin-left:2%;
+	margin-top:20px;
+	float:left;
+}
 .box {
 	width:95%;
 	background-color:rgba(120,120,120,.8);
 	float:left;
 	border:3px solid #AAAAAA;
 	margin: 10px;
-	font-family:"Times New Roman", Times, serif;
+	margin-top:5px;
+	margin-bottom:25px;
+	font-variant:normal;
+	letter-spacing:normal;
 	text-align: left;
 }
 .box p {
-	font-variant:normal;
-	letter-spacing:normal;
 	margin-left:20px;
 	margin-right:10px;
 }
-.box a {
-	font-variant:normal;
-	letter-spacing:normal;
-}
 .box h2 {
 	margin-left:20px;
+	font-variant:small-caps;
 	letter-spacing:2px;
 	word-spacing:8px;
 }

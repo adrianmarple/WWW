@@ -18,7 +18,11 @@ Your browser does not support the canvas element.
 </div>
 
 <div class="menu">
-	<object name="menu" data="menu.html" height="500"></object>
+	<script>
+		$(document).ready(function() {
+			$(".menu").load("menu.html div");
+		});
+	</script>
 </div>
 
 </body></html>
