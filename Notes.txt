@@ -9,10 +9,12 @@ About Me Page
 		-Nobuo Uematsu, John Adams, Philip Glass, Dmitri Shostakovich, Opeth, Blotted Science, Animals as Leaders, Between the Buried and Me, Dream Theater
 
 Programming Projects
+	-Fix graivty mouse demo (the cursor won't show up and it does not gel with the menu)
 	-Make better thumb for HexSweeper
-	-Make thumb for gravity mouse.
+	-Make thumb for gravity mouse
+	-Create page for thumbscroll
 	-Create online interactive selection for (tileable) genetic images
 
 Art Projects
 	-Update chainmail page with new jewelry.
-	-Add computer generated art page?
+	-Add computer generated art page.
