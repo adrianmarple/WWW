@@ -46,12 +46,12 @@ dd {
 .box {
 	width:95%;
 	background-color:rgba(120,120,120,.8);
-	float:left;
 	border:3px solid #AAAAAA;
 	margin: 10px;
 	margin-top:5px;
 	margin-bottom:25px;
 	font-variant:normal;
+	font-size:13pt;
 	letter-spacing:normal;
 	text-align: left;
 }
