@@ -1,6 +1,6 @@
 /* Copyright Adrian Marple
  * 
- * Let the scroll area be given by a rectangle of width w and height h.
+ * Let the scroll area be given by a rectangle of width w and height h
  * If the offset of a thumb image is given by real number x,
  * the mid point is placed at f(x) and its height is given by g(x).
  * These values are governed by the following equations:
@@ -26,8 +26,6 @@ var active_thumbscroll;
 
 $(document).ready(function() {
 	//initialization
-	$('.thumbscroll *').hide();
-	$('.thumb').show();
 	$('.thumbscroll').data('offset', 0);
 	$('.thumbscroll').css({
 		'position': 'relative'
@@ -89,6 +87,7 @@ $(document).ready(function() {
 		}
 		return !moving;
 	});
+	$(window).resize(resize);
 });
 
 function resize() {
@@ -139,7 +138,7 @@ function render(thumbscroll) {
 		var img = $(this).find('img');
 		img.css({
 			'position': 'absolute',
-			'width': g,
+			//'width': g,
 			'height': g,
 			'top': (h - g)/2,
 			'left': f - g/2,

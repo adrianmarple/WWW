@@ -17,7 +17,10 @@ var wells = [];
 var visible = false;
 var NORM_OPACITY = .4;
 var WELL_OPACITY = .8;
-var opacity = 0;
+var opacity = NORM_OPACITY;
+if(extension)
+	opacity = 0;
+
 var Z_INDEX = 1e8;
 
 var G = 3;
@@ -76,6 +79,8 @@ $(document).ready(function() {
 			'" style="position:fixed; z-index:-2; float:left; opacity:0;' +
 			'border-style:none; -webkit-box-shadow:none; box-shadow:none; width:14px" //>');
 	p_offset = document.getElementById('pointer').getBoundingClientRect();
+	if(!extension)
+		$('#pointer').css('z-index', Z_INDEX);
 	
 	//Move mouse pointer towards wells
 	window.addEventListener('mousemove', function(e) {

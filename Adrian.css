@@ -1,8 +1,6 @@
 body {
 	background-color:black;
 	font-family:"Adobe Garamond", Garamond, serif;
-	font-variant:small-caps;
-	letter-spacing:1px;
 	color:white;
 }
 canvas {
@@ -13,12 +11,15 @@ canvas {
 }
 h1 {
 	font-size:36pt;
+	font-variant:small-caps;
 	letter-spacing:5px;
 	word-spacing:20px;
 	margin-left:3%;
 }
 h2 {
 	font-size:24pt;
+	font-variant:small-caps;
+	letter-spacing:1px;
 	margin-left:3%;
 }
 a {
@@ -44,6 +45,7 @@ dd {
 	float:left;
 }
 .box {
+	float:left;
 	width:95%;
 	background-color:rgba(120,120,120,.8);
 	border:3px solid #AAAAAA;
@@ -51,7 +53,6 @@ dd {
 	margin-top:5px;
 	margin-bottom:25px;
 	font-variant:normal;
-	font-size:13pt;
 	letter-spacing:normal;
 	text-align: left;
 }
