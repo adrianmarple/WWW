@@ -1,20 +1,13 @@
 General
-	-Create nice interactive scrollbar for thumbnails
-		-Increase size as image approaches middle
-		-top image overlaps others as two images pass eachother, they touch at the edge
-	-Finish Project page.
 
 About Me Page
 	-Artists/Composers that have influenced me
 		-Nobuo Uematsu, John Adams, Philip Glass, Dmitri Shostakovich, Opeth, Blotted Science, Animals as Leaders, Between the Buried and Me, Dream Theater
 
 Programming Projects
-	-Fix graivty mouse demo (the cursor won't show up and it does not gel with the menu)
-	-Make better thumb for HexSweeper
-	-Make thumb for gravity mouse
-	-Create page for thumbscroll
 	-Create online interactive selection for (tileable) genetic images
 
 Art Projects
+	-Make better thumbs for chainmail and music.
 	-Update chainmail page with new jewelry.
 	-Add computer generated art page.
