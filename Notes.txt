@@ -5,7 +5,9 @@ About Me Page
 		-Nobuo Uematsu, John Adams, Philip Glass, Dmitri Shostakovich, Opeth, Blotted Science, Animals as Leaders, Between the Buried and Me, Dream Theater
 
 Programming Projects
-	-Create online interactive selection for (tileable) genetic images
+	-put extension version of Gravity Mouse on github
+	-Finish notes page (make it work with dropbox) and put it on github
+	-??? Create online interactive selection for (tileable) genetic images ???
 
 Art Projects
 	-Make better thumbs for chainmail and music.

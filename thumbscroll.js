@@ -122,7 +122,7 @@ function render($thumbscroll) {
 	if(offset >= 0 && offset < $thumbs.length) {
 		$thumb = $($thumbs[Math.floor(offset)])
 		$thumb.find('*').show();
-		$thumbscroll.height(Math.max(h*1.3, h + $thumb.outerHeight() + 40));
+		$thumbscroll.height(Math.max(h*1.3, h + $thumb.outerHeight()));
 	}
 	else
 		$thumbscroll.height(h*1.3);

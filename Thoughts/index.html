@@ -1,0 +1,40 @@
+<!doctype html>
+<!-- https://dl.dropboxusercontent.com/spa/livq9q897y2xmiv/notes/public/index.html -->
+<html>
+  <head>
+    <title>Thoughts</title>
+	<script src="js/jquery-1.10.2.min.js"></script>
+	<!-- <script src="js/bootstrap.min.js"></script> -->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/dropbox.js/0.10.2/dropbox.min.js"></script>
+	<script src="js/notes.js"></script>
+	
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css" />
+	<link rel="stylesheet" href="css/notes.css" />
+	<link rel="icon" href="favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <h1 align="center">Thoughts</h1>
+	
+	<form id="newthought" action="/thought" method="post" target="dummyframe">
+		<textarea name="text" placeholder="What's your idea?"></textarea>
+	</form>
+	
+	<iframe id="dummyframe" style="display:none"></iframe>
+	
+	<div id="main">
+		<p class="thought">A scrollbar for thumbnails that packs a infinite scroll into a finite area.  Midpoints given by logistic function and size given by a Gaussian.</p>
+		<p class="thought">Gamify sleep.  Give rewards for consistency and duration.  Use something like a sleep app to gather ground truth data.</p>
+		<p class="thought">Turn the recruitment puzzle on its head.  Send prospective employers a (web-based) puzzle to solve that gives my contact info at the end.</p> 
+		<p class="thought">Gamify chores.  Use the power of the chain of Xs idea to help form habits.</p>
+		<p class="thought">Give clickable items on the screen gravity: a "force" that increases mouse speed based on proximity.</p>
+		<p class="thought">Make a script that gets dropbox referrals through Mechanical Turk.  Advertise through Craig's List perhaps and charge e.g. $20.  Eventually perhaps set up a website to process payments and start script automatically.</p>
+		<p class="thought">Make an app (or at least website) that records thoughts in this html file.  Maybe use dropbox API.</p>
+		<p class="thought">OLD THOUGHT: 3D printed diamond.</p>
+		<p class="thought">OLD THOUGHT: Cross between MOOC and P90X: a continuous online workout class.  Perhaps target women more with classes like yoga and pilattes.</p>
+		<p class="thought">OLD THOUGHT: High fidelity 3D displays.  Track eyes and adaptively change focus based on eye position.  More suited for video games.</p>
+		<p class="thought">OLD THOUGHT: Eyes as mouse. Ease of access idea that turns blinks into clicks and focal point into mouse position.</p>
+	</div>
+	
+  </body>
+</html>
