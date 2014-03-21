@@ -27,10 +27,14 @@ var active_thumbscroll;
 $(document).ready(function() {
 	//initialization
 	$('.thumbscroll').data('offset', 0);
-	$('.thumbscroll').css({
-		'position': 'relative'
+	$('.thumbscroll').css('position', 'relative');
+	$('.thumbscroll').each(function(i, elem) {
+		var $img = $(this).find('img');
+		if($img.length > 0)
+			$($img[0]).css('position', 'absolute');
 	});
 	resize();
+	resize(); //resize to account for changes due to moved images
 	
 	//event handlers for scrolling
 	$(window).mousedown(function(e) {
@@ -48,7 +52,7 @@ $(document).ready(function() {
 				click = true;
 				startX = e.clientX;
 				prevX = e.clientX;
-				active_thumbscroll = $(t);
+				$active_thumbscroll = $(t);
 			}
 		});
 		return !moving; //stop default and propagation if moving
@@ -57,7 +61,7 @@ $(document).ready(function() {
 		moving = false;
 		
 		if(click) {
-			var imgs = active_thumbscroll.find('.thumb img');
+			var imgs = $active_thumbscroll.find('.thumb img');
 			imgs.sort(function(a, b) {
 				return $(a).css('z-index') - $(b).css('z-index');
 			});
@@ -81,9 +85,9 @@ $(document).ready(function() {
 			if(startX - e.clientX > click_thresh || e.clientX - startX > click_thresh)
 				click = false;
 			
-			var t = active_thumbscroll;
-			t.data('offset', t.data('offset') + diff/(r*t.width()));			
-			render(t);
+			var $t = $active_thumbscroll;
+			$t.data('offset', $t.data('offset') + diff/(r * $t.width()));			
+			render($t);
 		}
 		return !moving;
 	});
@@ -92,38 +96,40 @@ $(document).ready(function() {
 
 function resize() {
 	$('.thumbscroll').each(function(i, thumbscroll) {
-		render($(thumbscroll));
+		var w = $(this).width();
+		$(this).find('.thumb').css({
+			'position': 'absolute',
+			'text-align': 'center',
+			'width': w,
+			'top': w*r
+		});
+		
+		render($(this));
 	});
 }
 
-function render(thumbscroll) {
-	var thumbs = thumbscroll.find('.thumb');
-	var offset = thumbscroll.data('offset');
-	var w = thumbscroll.width();
+function render($thumbscroll) {
+	var $thumbs = $thumbscroll.find('.thumb');
+	var offset = $thumbscroll.data('offset');
+	var w = $thumbscroll.width();
 	var h = w*r;
 	var a = -2 * Math.log(2/(1 + r*(Math.exp(b/-4))) - 1);
 	
 	//Display the description of the thumb with focus (if any)
-	thumbscroll.find('p').hide();
+	//thumbscroll.find('p').hide();
+	$thumbscroll.find('.thumb *').hide();
 	offset += .5;
-	if(offset >= 0 && offset < thumbs.length) {
-		var description = $(thumbs[Math.floor(offset)]).find('p');
-		description.css({
-			'position': 'absolute',
-			'text-align': 'center',
-			'width': w - 40,
-			'top': h + 10,
-			'display': 'block'
-		});
-		description.find('*').show();
-		thumbscroll.height(Math.max(h*1.3, h + description.outerHeight() + 40));
+	if(offset >= 0 && offset < $thumbs.length) {
+		$thumb = $($thumbs[Math.floor(offset)])
+		$thumb.find('*').show();
+		$thumbscroll.height(Math.max(h*1.3, h + $thumb.outerHeight() + 40));
 	}
 	else
-		thumbscroll.height(h*1.3);
+		$thumbscroll.height(h*1.3);
 	offset -= .5;
 	
 	//Render each thumb image appropriately
-	thumbs.each(function(index, elem) {
+	$thumbs.each(function(index, elem) {
 		var x = offset - index;
 		var f = w/(1 + Math.exp(a*x));
 		var g = h * Math.exp(-b*x*x);
@@ -131,19 +137,21 @@ function render(thumbscroll) {
 		if(.5 < x)
 			zindex = index;
 		else
-			zindex = 2*thumbs.length - index;
+			zindex = 2*$thumbs.length - index;
 		
 		$(this).css('display', 'inline');
 		
-		var img = $(this).find('img');
-		img.css({
-			'position': 'absolute',
-			//'width': g,
-			'height': g,
-			'top': (h - g)/2,
-			'left': f - g/2,
-			'z-index': zindex,
-			'display': 'block'
-		});
+		var $img = $(this).find('img');
+		if($img.length > 0) {
+			$($img[0]).css({
+				'position': 'absolute',
+				//'width': g,
+				'height': g,
+				'top': (h - g)/2 - h,
+				'left': f - g/2,
+				'z-index': zindex,
+				'display': 'block'
+			});
+		}
 	});
 }
