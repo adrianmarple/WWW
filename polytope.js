@@ -5,7 +5,7 @@ var type = query[0];
 var c = document.getElementById("background");
 var ctx = c.getContext("2d");
 var sign = new Image();
-sign.src = 'Signature.png';
+sign.src = 'Images/Signature.png';
 
 var dim1 = 0;	//first rotation axis dimension
 var dim2 = 3;	//second rotation axis dimension
