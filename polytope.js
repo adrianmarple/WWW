@@ -7,8 +7,8 @@ var ctx = c.getContext("2d");
 var sign = new Image();
 sign.src = 'Images/Signature.png';
 
-var dim1 = 0;	//first rotation axis dimension
-var dim2 = 3;	//second rotation axis dimension
+var dim1 = 2;	//first rotation axis dimension
+var dim2 = 0;	//second rotation axis dimension
 var delta = 4;	//rotation speed
 var d3 = 4;		//used in the projection from 3 to 2 dimensions
 var d4 = 1.11;	//used in the projection from 4 to 3 dimensions
@@ -25,8 +25,6 @@ var rotatedim2 = true;
 var rotatedim3 = false;
 
 if(type == "600cell") {
-	dim1 = 2;
-	dim2 = 0;
 	delta = 1.2;
 	d4 = .95;
 	d3 = 12;
@@ -34,8 +32,6 @@ if(type == "600cell") {
 	color = 900;
 }
 if(type == "120cell") {
-	dim1 = 2;
-	dim2 = 0;
 	delta = 1.3;
 	lw = .12;
 	zoom = 2;
@@ -64,7 +60,6 @@ if(type == "16cell") {
 	zoom = 5;
 	d4 = 1.3;
 	vertexes = true;
-	rotatedim3 = true;
 }
 if(type == "icosahedron" || type == "dodecahedron" || type == "cube" || type == "octahedron") {
 	dim1 = 0;
@@ -78,6 +73,13 @@ if(type == "icosahedron") {
 	delta = 2;
 }
 if(type == "cube" || type == "octahedron") {
+	fanceEdges = true;
+}
+if(type == "5cell" || type == "pentachoron") {
+	d3 = 5;
+	zoom = 4;
+	lw = .4;
+	vertexes = true;
 	fanceEdges = true;
 }
 
@@ -275,6 +277,7 @@ function addEdges(treshold_dist) {
 
 var phi = (1 + Math.sqrt(5))/2;
 var vs = new Array();
+
 if(type == "600cell") {
 	var phi = (1 + Math.sqrt(5))/2;
 	addVertexes([1,1,1,1],IdPermutation);
@@ -310,6 +313,9 @@ if(type == "tesseract") {
 if(type == "16cell") {
 	addVertexes([1,0,0,0], EvenPermutations);
 	addEdges(3);
+	ptope.rotate(0,3,Math.PI/4);
+	ptope.rotate(1,3,Math.PI/4);
+	ptope.rotate(2,3,Math.PI/4);
 }
 if(type == "icosahedron") {
 	addVertexes([phi,1,0,0], Even3Permutations);
@@ -327,6 +333,14 @@ if(type == "cube") {
 if(type == "octahedron") {
 	addVertexes([1,0,0,0], Even3Permutations);
 	addEdges(3);
+}
+if(type == "pentachoron" || type == "5cell") {
+	vs.push([1,1,1,-1]);
+	vs.push([1,-1,-1,-1]);
+	vs.push([-1,1,-1,-1]);
+	vs.push([-1,-1,1,-1]);
+	vs.push([0,0,0,2/phi]);
+	addEdges(40);
 }
 
 ptope.normalize();
@@ -358,8 +372,6 @@ function setDimensions() {
 	scale = Math.min(width, height)/2;
 	c.width = width;
 	c.height = height;
-	//c.style.left=""+(window.pageXOffset-border)+"px";
-	//c.style.top=""+(window.pageYOffset-border)+"px";
 	draw();
 }
 setDimensions();

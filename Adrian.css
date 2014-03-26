@@ -74,8 +74,9 @@ dd {
 .box table {
 	margin: 10px;
 }
-.box table tr td {
-	margin-right: 10px;
+.box td { 
+    padding-right: 20px;
+    padding-left: 5px;
 }
 img.right {
 	float:right;
