@@ -1,0 +1,155 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Stylish Curriculum Vitae
+% LaTeX Template
+% Version 1.0 (18/7/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Stefano (http://stefano.italians.nl/)
+%
+% IMPORTANT: THIS TEMPLATE NEEDS TO BE COMPILED WITH XeLaTeX
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% The main font used in this template, Adobe Garamond Pro, does not 
+% come with Windows by default. You will need to download it in
+% order to get an output as in the preview PDF. Otherwise, change this 
+% font to one that does come with Windows or comment out the font line 
+% to use the default LaTeX font.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper, oneside, final]{scrartcl} % Paper options using the scrartcl class
+
+\usepackage{scrpage2} % Provides headers and footers configuration
+\usepackage{titlesec} % Allows creating custom \section's
+\usepackage{marvosym} % Allows the use of symbols
+\usepackage{tabularx,colortbl} % Advanced table configurations
+\usepackage{fontspec} % Allows font customization
+\usepackage{color}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks = true,
+	urlcolor = black
+}
+
+\defaultfontfeatures{Mapping=tex-text}
+\setmainfont{Adobe Garamond Pro} % Main document font
+
+\titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[\titlerule] % Section formatting
+
+\pagestyle{scrheadings} % Print the headers and footers on all pages
+
+\addtolength{\voffset}{-0.5in} % Adjust the vertical offset - less whitespace at the top of the page
+\addtolength{\textheight}{3cm} % Adjust the text height - less whitespace at the bottom of the page
+
+\newcommand{\gray}{\rowcolor[gray]{.90}} % Custom highlighting for the work experience and education sections
+
+\definecolor{url-color}{rgb}{.2,.2,.5}
+
+%----------------------------------------------------------------------------------------
+% FOOTER SECTION
+%----------------------------------------------------------------------------------------
+
+\renewcommand{\headfont}{\normalfont\rmfamily\scshape} % Font settings for footer
+
+\cofoot{
+\addfontfeature{LetterSpace=20.0}\fontsize{12.5}{17}\selectfont % Letter spacing and font size
+
+12610 La Cresta Dr {\large\textperiodcentered} Los Altos Hills {\large\textperiodcentered} CA 94022\\ % Your mailing address
+{\Large\Letter} adrian.marple@gmail.com \ {\Large\Telefon} (650) 384-5449 % Your email address and phone number
+}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\begin{center} % Center everything in the document
+
+%----------------------------------------------------------------------------------------
+% HEADER SECTION
+%----------------------------------------------------------------------------------------
+
+{\addfontfeature{LetterSpace=20.0}\fontsize{36}{36}\selectfont\scshape Adrian Marple} % Your name at the top
+
+\vspace{.5cm}
+
+\href{http://www.stanford.edu/~amarple}{\addfontfeature{LetterSpace=20.0}\fontsize{12.5}{17}\selectfont
+\color{url-color}
+www.stanford.edu/\hspace{1pt}{\raise.17ex\hbox{$\scriptstyle\mathtt{\sim}$}}\hspace{2pt}amarple} % Your website
+
+\vspace{1cm} % Extra whitespace after the large name at the top
+
+%----------------------------------------------------------------------------------------
+%	OBJECTIVE
+%----------------------------------------------------------------------------------------
+
+\section{Objective}
+
+To work on a product that I passionately believe will have an impact. \\
+Unusually hard math is welcome.
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+
+\section{Education}
+
+\begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{2cm}X}
+\gray Period & \textbf{Sept 2010 --- Mar 2014}\\
+\gray Degree & \textbf{Master of Science in Computer Science}\\
+\gray GPA & \textbf{3.94\ /\ 4.0}\\
+\gray University & \textbf{Stanford University} \hfill Stanford, CA\\
+& Admitted for a PhD in CS and advised by \href{http://ai.stanford.edu/~shoham}{\color{url-color} Yoav Shoham}.  Currently on leave of absence.  For publications go to
+\href{http://www.stanford.edu/~amarple/Research}{
+\color{url-color}
+www.stanford.edu/\hspace{1pt}{\raise.17ex\hbox{$\scriptstyle\mathtt{\sim}$}}\hspace{2pt}amarple/Research}.
+\end{tabularx}
+
+\vspace{12pt}
+
+\begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{2cm}X}
+\gray Period & \textbf{Aug 2006 --- May 2010}\\
+\gray Degree & \textbf{Bachelor of Science in Electrical Engineering Computer Science}\\
+\gray Minor & \textbf{Minor in Mathematics}\\
+\gray GPA & \textbf{3.89\ /\ 4.0}\\
+\gray University & \textbf{The University of California} \hfill Berkeley, CA\\
+%& Extra information about degree
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+\section{Work Experience}
+
+\vspace{12pt}
+
+\begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{2cm}X}
+\gray Period & \textbf{June 2013 --- Sept 2013}\\
+\gray Job Title & \textbf{Research Intern}\\
+\gray Employer & \textbf{Microsoft Research} \hfill Cambridge, MA\\
+& Mentored by Managing Director of MSR New England \href{http://research.microsoft.com/en-us/um/people/jchayes/}{\color{url-color} Jennifer Chayes}, I worked on an axiomatization of communities. %TODO something about Christian and/or Shang-Hua?
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+
+\section{Skills}
+
+\begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
+Computer Languages & JavaScript, Java, MATLAB, C\verb!++! \\
+Tools & \LaTeX, Git \\
+Math & Computational Complexity, Abstract Algebra, Game Theory \\
+Interests & Weight Lifting, Chainmail Art, Video Game Music, Drum Corps
+\end{tabular}
+
+%----------------------------------------------------------------------------------------
+
+\end{center}
+
+\end{document}

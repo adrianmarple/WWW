@@ -28,13 +28,27 @@ $(document).ready(function() {
 	//initialization
 	$('.thumbscroll').data('offset', 0);
 	$('.thumbscroll').css('position', 'relative');
-	$('.thumbscroll').each(function(i, elem) {
-		var $img = $(this).find('img');
-		if($img.length > 0)
-			$($img[0]).css('position', 'absolute');
+	$('.thumb').each(function(i, elem) {
+		var $imgs = $(this).find('img');
+		var cursor = 'default';
+		if($(this).find('a').length > 0)
+			cursor = 'pointer';
+			
+		if($imgs.length > 0) {
+			$(this).prepend(
+				'<div class="thumbimg" style="' +
+					'position: absolute;' +
+					'background-position: center;' +
+					'background-size: contain;' +
+					'background-repeat: no-repeat;' +
+					'background-image: url(' + $imgs[0].src + ');' +
+					'cursor: ' + cursor + ';' +
+				'"> </div>'
+			);
+		}
 	});
+	
 	resize();
-	resize(); //resize to account for changes due to moved images
 	
 	//event handlers for scrolling
 	$(window).mousedown(function(e) {
@@ -55,25 +69,25 @@ $(document).ready(function() {
 				$active_thumbscroll = $(t);
 			}
 		});
-		return !moving; //stop default and propagation if moving
+		return !moving;
 	});
 	$(window).mouseup(function(e) {
 		moving = false;
 		
 		if(click) {
-			var imgs = $active_thumbscroll.find('.thumb img');
-			imgs.sort(function(a, b) {
+			var $thumbimgs = $active_thumbscroll.find('.thumbimg');
+			$thumbimgs.sort(function(a, b) {
 				return $(a).css('z-index') - $(b).css('z-index');
 			});
 			
-			imgs.each(function(i, elem) {
+			$thumbimgs.each(function(i, elem) {
 				var rect = this.getBoundingClientRect();
 				if(rect.left <= e.clientX && rect.right  > e.clientX &&
 				   rect.top  <= e.clientY && rect.bottom > e.clientY) {
 					
-					var a = $(this).parent().find('a');
-					if(a.length > 0)
-						window.location.href = a.attr('href');
+					var $a = $(this).parent().find('a');
+					if($a.length > 0)
+						window.location.href = $a.attr('href');
 				}
 			});
 		}
@@ -122,6 +136,10 @@ function render($thumbscroll) {
 	if(offset >= 0 && offset < $thumbs.length) {
 		$thumb = $($thumbs[Math.floor(offset)])
 		$thumb.find('*').show();
+		$imgs = $thumb.find('img');
+		if($imgs.length > 0)
+			$($imgs[0]).hide();
+		
 		$thumbscroll.height(Math.max(h*1.3, h + $thumb.outerHeight()));
 	}
 	else
@@ -139,19 +157,13 @@ function render($thumbscroll) {
 		else
 			zindex = 2*$thumbs.length - index;
 		
-		$(this).css('display', 'inline');
-		
-		var $img = $(this).find('img');
-		if($img.length > 0) {
-			$($img[0]).css({
-				'position': 'absolute',
-				//'width': g,
-				'height': g,
-				'top': (h - g)/2 - h,
-				'left': f - g/2,
-				'z-index': zindex,
-				'display': 'block'
-			});
-		}
+		$(this).find('.thumbimg').css({
+			'width':  g,
+			'height': g,
+			'top': (h - g)/2 - h,
+			'left': f - g/2,
+			'z-index': zindex,
+			'display': 'block'
+		});
 	});
 }
