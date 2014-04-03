@@ -140,7 +140,7 @@ function render($thumbscroll) {
 		if($imgs.length > 0)
 			$($imgs[0]).hide();
 		
-		$thumbscroll.height(Math.max(h*1.3, h + $thumb.outerHeight()));
+		$thumbscroll.height(Math.max(h*1.3, h + $thumb.outerHeight(true)));
 	}
 	else
 		$thumbscroll.height(h*1.3);

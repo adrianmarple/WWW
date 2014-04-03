@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9) (preloaded format=xelatex 2014.3.18)  25 MAR 2014 10:25
+This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9) (preloaded format=xelatex 2014.3.18)  3 APR 2014 00:13
 entering extended mode
 **Marple*Resume.tex
 ("C:\Users\Adrian Marple\Dropbox\WWW\Resume\Marple Resume.tex"
@@ -1041,7 +1041,7 @@ xt;+smcp;" at 10.95pt
 Requested font "Adobe Garamond Pro/B/ICU:script=latn;language=DFLT;mapping=tex-
 text;" at 10.95pt
  -> C:/WINDOWS/Fonts/AGaramondPro-Bold.otf
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 155.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 156.
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -1062,7 +1062,7 @@ xt;letterspace=20.0;+smcp;" at 12.0pt
 Requested font "Adobe Garamond Pro/ICU:script=latn;language=DFLT;mapping=tex-te
 xt;letterspace=20.0;+smcp;" at 14.4pt
  -> C:/WINDOWS/Fonts/AGaramondPro-Regular.otf
-LaTeX Font Info:    Try loading font information for U+mvs on input line 155.
+LaTeX Font Info:    Try loading font information for U+mvs on input line 156.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\marvosym\umvs.fd")
 Requested font "umvs" at 14.4pt
@@ -1070,22 +1070,22 @@ Requested font "umvs" at 14.4pt
  [1
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 155.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 156.
 
 ("C:\Users\Adrian Marple\Dropbox\WWW\Resume\Marple Resume.aux")
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 155.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 155.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 156.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 156.
 
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.5pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 155.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 156.
  ) 
 Here is how much of TeX's memory you used:
  22327 strings out of 429035
  408952 string characters out of 3166907
- 497882 words of memory out of 3000000
+ 498882 words of memory out of 3000000
  25359 multiletter control sequences out of 15000+200000
  9305 words of font info for 71 fonts, out of 3000000 for 9000
  912 hyphenation exceptions out of 8191
