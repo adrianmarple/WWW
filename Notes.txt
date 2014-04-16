@@ -1,23 +1,15 @@
-General
-
-About Me Page
-	-Artists/Composers that have influenced me
-		-Nobuo Uematsu, John Adams, Philip Glass, Dmitri Shostakovich, Opeth, Blotted Science, Animals as Leaders, Between the Buried and Me, Dream Theater
-
 Programming Projects
 	-Gravity Mouse:
 		-shake mouse to disable.
 	-Thoughts:
-		-indicate when thoughts are not persistant (demo mode)
-	-thumbscroll:
-		-deal with issue of lag
+		-indicate when thoughts are not persistent (demo mode)
 	-??? Create online interactive selection for (tileable) genetic images ???
 
 Art Projects
 	-Make better thumbs for chainmail and music.
-	-Update chainmail page with new jewelry.
+	-Update chainmail page with new jewellery.
 	-Add computer generated art page.
 	
 Research
-	-Add journal version of paper with Joerg once submitted
-	-Journal version of community paper at some point
+	-Add journal version of paper with Joerg once submitted.
+	-Journal version of community paper at some point.

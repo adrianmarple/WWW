@@ -33,8 +33,8 @@ if(type == "600cell") {
 }
 if(type == "120cell") {
 	delta = 1.3;
-	lw = .12;
-	zoom = 2;
+	lw = .1;
+	zoom = 1.5;
 }
 if(type == "120cellv2") {
 	dim1 = 2;
